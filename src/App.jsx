@@ -24,6 +24,7 @@ export default function App(props) {
   const [type, toggle] = useToggle(['login', 'register']);
   const [registro, setRegistro] = useState('');
   const [senha, setSenha] = useState('');
+  //se não logar, não aparece a page de login
   const [isLogged, setIsLogged] = useState(false);
   const form = useForm({
     initialValues: {
@@ -50,6 +51,7 @@ export default function App(props) {
         text: "Você realizou login com sucesso!",
         icon: "success"
       });
+      // se logado, vai para a tela de menu
       setIsLogged(true);
     }
     console.log(resposta)
